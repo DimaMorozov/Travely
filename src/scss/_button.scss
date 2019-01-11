@@ -1,0 +1,13 @@
+.button{
+    background-color:  #545357;
+    font-family: $font-primary;
+    color: $secondary-color;
+    padding: 15px 45px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &__img{
+      margin-right: 0.25rem;
+    }
+}

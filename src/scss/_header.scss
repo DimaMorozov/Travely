@@ -1,0 +1,195 @@
+.header {
+  font-family: $font-primary;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: $secondary-color;
+
+  @media all and (min-width: 925px) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    @extend %flex-row-sb;
+  }
+
+  &__logo {
+    @extend %flex-row;
+    padding: 1rem 0;
+
+    @media all and (min-width: 925px) {
+      padding: 0;
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: $primary-color;
+
+      @media all and (min-width: 925px) {
+        font-size: 3rem;
+      }
+    }
+
+    &-icon {
+      padding-bottom: 1.2rem;
+      margin-left: 0.2rem;
+
+      @media all and (min-width: 925px) {
+        padding-bottom: 1.5rem;
+        width: 0.7rem;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    top: 4.8rem;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-image: linear-gradient($secondary-color, $primary-color);
+    overflow: auto;
+    padding-bottom: 12.5rem;
+
+    @media all and (min-width: 925px) {
+      display: flex;
+      position: static;
+      height: auto;
+      background-image: none;
+      padding-bottom: 0px;
+      overflow: inherit;
+    }
+
+    &-icon {
+      display: block;
+      margin: 0 auto;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &-item {
+      list-style: none;
+      height: 5rem;
+      border: 1px solid transparent;
+      position: relative;
+
+      @media all and (min-width: 925px) {
+        &:hover {
+          background-color: $primary-color;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            bottom: -98px;
+            border: 73px solid transparent;
+            border-top: 25px solid $primary-color;
+          }
+        }
+      }
+
+      @media all and (min-width: 925px) {
+        border: 1px solid transparent;
+        width: 9rem;
+        height: 5rem;
+      }
+    }
+
+    &-link {
+      @extend %flex-col-c;
+      width: 100%;
+      height: 100%;
+
+      &:hover .header__nav-title {
+        color: $secondary-color;
+      }
+
+      &:hover .header__nav-icon {
+        fill: $secondary-color;
+        transform: rotateY(360deg);
+        transition: all 1s ease-in-out;
+      }
+    }
+
+    &-title {
+      text-align: center;
+      color: $grey-color;
+      font-size: 1.5rem;
+      font-weight: 700;
+
+      @media all and (min-width: 925px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &__intro {
+    background: url('../images/background/header-background1@2x.png') 50% no-repeat;
+    background-size: cover;
+    font-family: $font-primary;
+    color: $secondary-color;
+    text-align: center;
+    padding-top: 11rem;
+    height: 100vh;
+
+    @media (min-width: 425px) and (orientation: landscape) {
+     height: auto;
+    }
+
+    @media all and (min-width: 768px) {
+      text-align: left;
+      padding-top: 18rem;
+      height: auto;
+      padding-bottom: 5rem;
+    }
+
+    @media all and (min-width: 1440px) {
+      padding-top: 25.8rem;
+    }
+
+    &-subtitle {
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+      font-size: 2.375rem;
+      font-weight: 400;
+    }
+
+    &-title {
+      font-size: 3.25rem;
+      font-weight: 800;
+      margin: 0;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      line-height: 1;
+
+      @media (min-width: 425px) and (orientation: landscape) {
+        margin-bottom: 1rem;
+      }
+
+      @media all and (min-width: 768px) {
+        font-size: 6.25rem;
+      }
+    }
+
+    &-text {
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+      font-size: 1rem;
+
+      @media all and (min-width: 768px) {
+        line-height: 1.5;
+        font-size: 1.1rem;
+      }
+
+      br {
+        display: none;
+
+        @media all and (min-width: 768px) {
+          display: block;
+        }
+      }
+    }
+  }
+}
